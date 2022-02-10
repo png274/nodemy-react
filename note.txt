@@ -1,0 +1,8 @@
+ Sẽ có 2 kiểu component trong React:
+ 1, Class component;  ***
+ - Còn gọi Statefull component
+ - Hiểu rõ hơn về LifeCycle
+ - Phải extends React.Component;
+ - Bắt buộc phải có hàm render() để trả về JSX
+ 2, Function component;
+ - Còn gọi là Stateless component, và sử dụng Hook để điều khiển logic của component
