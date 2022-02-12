@@ -6,3 +6,23 @@
  - Bắt buộc phải có hàm render() để trả về JSX
  2, Function component;
  - Còn gọi là Stateless component, và sử dụng Hook để điều khiển logic của component
+ 
+
+
+ Push GIT:
+ 3 step chính
+ git add: chấp nhận những thay đổi nào để đẩy lên Staged Changes
+ git commit: đẩy các thay đổi vào git local
+  git commit -m ''
+ git push: đẩy lên repo kèm với các thông tin commit 
+
+ Buổi 2: 
+ import css vào trong React Component, các quy tắc vẫn giữ nguyên so với CSS trong HTML
+ class => className
+ style => JS object
+ con trỏ this trỏ đến object gọi đến hàm sử dụng đến nó. Không áp dụng với arrow function.
+ sử dụng hàm .bind để ép giá trị object cho con trỏ this
+ onClick, onChange để xử lí event click và nhập chữ
+ sử dụng toàn tử 3 ngôi, && và array function để render ra các component
+
+  Buổi 3:
