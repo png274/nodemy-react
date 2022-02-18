@@ -1,10 +1,8 @@
 import React from "react";
-import { findDOMNode } from "react-dom";
-import Button from "../components/Button";
-
-import ButtonComponent from "../components/Button";
 import "../styles/App.css";
-// Class component
+
+import {alertSomething} from '../services/user';
+// className component
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -43,25 +41,48 @@ class App extends React.Component {
 
   clear = () => {
     this.setState({
-      calculatorValue: ''
-    })
+      calculatorValue: "",
+    });
   }
 
+  // render() {
+  //   return (
+  //     <div
+  //       id="calculator"
+  //     >
+  //       {/* {this.state.calculatorValue}
+  //       {_.map(this.numberValue, (num) => {
+  //         const callbackFunc = num%2 === 0 ? this.insertNumber : this.increase;
+  //         return <ButtonComponent key={num} onClick={callbackFunc} label={num} />;
+  //       })} */}
+  //     </div>
+  //   );
+  // }
   render() {
     return (
-      <div
-        id="calculator"
-        className="text-red"
-        style={{
-          padding: "10rem 20rem",
-          color: "green",
-        }}
-      >
-        {this.state.calculatorValue}
-        {this.numberValue.map((num) => {
-          const callbackFunc = num%2 === 0 ? this.insertNumber : this.increase;
-          return <ButtonComponent key={num} onClick={callbackFunc} label={num} />;
-        })}
+      <div className="container">
+        {/* <label>First in tab order:<input type="text"/></label>
+
+        <div tabIndex="1">Tabbable due to tabindex.</div>
+
+        <div tabIndex="0">Not tabbable: no tabindex.</div>
+
+        <label>Third in tab order:<input type="text"/></label> */}
+
+        <div className="text-mobile">hello</div>
+        <div className="text-desktop">hello</div>
+        {/* MaterialUI */}
+
+        <button onClick={alertSomething}>ok</button>
+        <div className="row border"
+          tabIndex={0}
+          onKeyPress={() => {
+            console.log('pressed')
+          }}>
+          <div className="border col-6">Column 1</div>
+          <div className="border col-6">Column 2</div>
+          <div className="col">Column 3</div>
+        </div>
       </div>
     );
   }
