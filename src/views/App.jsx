@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/App.css";
 
-import { alertSomething } from "../services/user";
-import Calculator from "../components/Calculator";
+// import { alertSomething } from "../services/user";
+// import Calculator from "../components/Calculator";
 import DrumPad from "../components/Drumpad";
 // className component
 class App extends React.Component {
