@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/App.css";
 
-import {alertSomething} from '../services/user';
+import { alertSomething } from "../services/user";
+import Calculator from "../components/Calculator";
+import DrumPad from "../components/Drumpad";
 // className component
 class App extends React.Component {
   constructor(props) {
@@ -43,7 +45,7 @@ class App extends React.Component {
     this.setState({
       calculatorValue: "",
     });
-  }
+  };
 
   // render() {
   //   return (
@@ -69,19 +71,15 @@ class App extends React.Component {
 
         <label>Third in tab order:<input type="text"/></label> */}
 
-        <div className="text-mobile">hello</div>
-        <div className="text-desktop">hello</div>
-        {/* MaterialUI */}
-
-        <button onClick={alertSomething}>ok</button>
-        <div className="row border"
-          tabIndex={0}
-          onKeyPress={() => {
-            console.log('pressed')
-          }}>
+        <div
+          className="row border"
+        >
           <div className="border col-6">Column 1</div>
           <div className="border col-6">Column 2</div>
           <div className="col">Column 3</div>
+          <div className=" col-12">
+            <DrumPad />
+          </div>
         </div>
       </div>
     );
