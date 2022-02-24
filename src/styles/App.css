@@ -5,3 +5,7 @@
 .text-bold {
   font-weight: bold;
 }
+
+.test-border {
+  border: 1px solid black;
+}

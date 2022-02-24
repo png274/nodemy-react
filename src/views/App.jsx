@@ -1,33 +1,34 @@
 import React from "react";
+// import DemoBootstrap from "../components/DemoBootstrap";
+import PomodoroClock from "../components/PomodoroClock";
 import "../styles/App.css";
-
 // import { alertSomething } from "../services/user";
 // import Calculator from "../components/Calculator";
-import DrumPad from "../components/Drumpad";
-import LifeCycle from "./LifeCycle";
-// className component
+// import DrumPad from "../components/Drumpad";
+// import LifeCycle from "./LifeCycle";
 class App extends React.Component {
-  state = {
-    shouldShow: true,
-  };
+	state = {
+		shouldShow: true,
+	};
 
-  render() {
-    return (
-      <div className="container">
-        <div>
-          LIFE CYCLE REACT
-          <button
-            onClick={() =>
-              this.setState({ shouldShow: !this.state.shouldShow })
-            }
-          >
-            Toggle
-          </button>
-        </div>
-        {this.state.shouldShow && <LifeCycle />}
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="container">
+				{/* <div>
+					LIFE CYCLE REACT
+					<button
+						onClick={() =>
+							this.setState({ shouldShow: !this.state.shouldShow })
+						}
+					>
+						Toggle
+					</button>
+				</div>
+				{this.state.shouldShow && <LifeCycle />} */}
+				<PomodoroClock />
+			</div>
+		);
+	}
 }
 
 export default App;
