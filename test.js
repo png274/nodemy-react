@@ -32,18 +32,43 @@
 // print();
 
 
-const promise = new Promise((resolve, reject) => {
-  resolve({data: 1, status: 'ok'});
-  // reject({message: 'cannot reseolve promise', code: 400});
-});
+// const promise = new Promise((resolve, reject) => {
+//   resolve({data: 1, status: 'ok'});
+//   // reject({message: 'cannot reseolve promise', code: 400});
+// });
 
-async function F() {
-  try {
-    const data = await promise;
-    console.log(data);
-    console.log(2);
-  } catch (error) {
-    console.log(error);
-  }
-}
-F();
+// async function F() {
+//   try {
+//     const data = await promise;
+//     console.log(data);
+//     console.log(2);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// F();
+
+// const F = () => {
+//   return () => {
+//     return () => {
+//       return 3
+//     };
+//   };
+// }
+
+// let result = F();
+
+// console.log(result()())
+
+import axios from 'axios';
+// const axios = require('axios').default;
+
+axios.post('http://localhost:3000/user/register', {
+  "username": "png007",
+  "password": "Abcd@1234"
+}).then(data => {
+  console.log(data.data);
+}).catch(err => {
+  console.log(err.message);
+  console.log(err.body);
+})
