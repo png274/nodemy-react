@@ -1,8 +1,31 @@
-import { DECREASE, INCREASE } from "./actionName";
+import { UPDATE_COUNT, UPDATE, CHANGE_USER_NAME, LOGIN } from "./actionName";
+import { getTask } from '../services/task';
 
 const actionCreator = {
-  increase: (count) => ({ type: INCREASE, payload: { count: count + 1 } }),
-  decrease: (count) => ({ type: DECREASE, payload: { count: count - 1 } })
-}
+  updateCount: (count) => dispatch => {
+    dispatch({
+      type: UPDATE_COUNT,
+      payload: { count }
+    })
+  },
+  changeUserName: () => {
+    return dispatch => {
+      dispatch({
+        type: CHANGE_USER_NAME
+      })
+    };
+  },
+  update: () => dispatch => { dispatch({ type: UPDATE }) },
+  fetchData: () => async dispatch => {
+    const result = await getTask();
+    dispatch({
+      type: 'FETCH',
+      payload: {
+        data: result,
+      }
+    })
+  },
+  loginAction: (token) => ({ type: LOGIN, payload: { token } })
+};
 
 export default actionCreator;

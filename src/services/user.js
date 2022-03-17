@@ -1,3 +1,5 @@
+import axios from 'axios';
+const url = 'http://localhost:3000/user'
 // Cache
 let data = null;
 
@@ -12,6 +14,9 @@ export const getCharacter = () => {
 }
 
 
+export const login = (payload) => {
+  return axios.post(url + '/login', payload).then(resp => resp.data);
+}
 /**
  *  https://randomuser.me/api/?results=50
  * Query string
