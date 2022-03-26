@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://localhost:3000/user'
+const url = 'https://todo-nodemy.herokuapp.com/user'
 // Cache
 let data = null;
 

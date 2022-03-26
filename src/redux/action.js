@@ -25,7 +25,8 @@ const actionCreator = {
       }
     })
   },
-  loginAction: (token) => ({ type: LOGIN, payload: { token } })
+  loginAction: (token) => (dispatch) => { fetch('/me'); return ({ type: LOGIN, payload: { token } }) }
+
 };
 
 export default actionCreator;

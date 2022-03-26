@@ -1,18 +1,37 @@
-import { Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Navigate, useNavigate, useLocation } from 'react-router-dom';
 import Login from "../views/Login";
 import Home from "../views/Home";
 import Page from "../views/Page";
 import About from "../views/About";
+import { useSelector, useDispatch } from 'react-redux';
+
+import action from "../redux/action";
 
 function PrivateRoute({ children }) {
-  const token = localStorage.getItem("authToken");
-  console.log(token);
-  if (!token) {
+  const userSelector = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    console.log(location);
+    if (token && !userSelector.token) {
+      dispatch(action.loginAction(token));
+      navigate(location);
+      return;
+    }
+  }, [dispatch, userSelector.token, location, navigate]);
+
+  if (!userSelector.token) {
     return <Navigate to={"/login"} />;
   }
 
   return children;
 }
+
+// GET: /me
 
 const routeConfig = [
   {

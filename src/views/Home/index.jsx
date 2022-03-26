@@ -1,12 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { connect, useSelector, useDispatch } from "react-redux";
 import actionCreator from "../../redux/action";
+import userContext from "../../utils/context/user";
+import styles from "./Home.module.scss";
 
 const Home = (props) => {
+	const userCtx = useContext(userContext);
 	useEffect(() => {
 		console.log("HOME: ", props);
+		console.log(userCtx);
 	}, []);
+
+	console.log(styles);
 
 	// useHistory  < v5
 	return (
@@ -35,6 +41,8 @@ const Home = (props) => {
 			>
 				Update
 			</button>
+			<div className={`${styles["parent"]}`}>Parent module</div>
+			<div className="parent">Parent global</div>
 		</>
 	);
 };

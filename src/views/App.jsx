@@ -1,9 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Link, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import routeConfig from "../config/routes";
 import store from "../redux/store";
-import "antd/dist/antd.css";
 
 function App() {
 	return (
